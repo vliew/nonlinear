@@ -1,0 +1,10 @@
+For all inequalities, "alg" gives multiplier in form of spec equation rather than as a circuit.
+k = 010101... is fixed, | is bitwise-OR and & is bitwise-AND.
+For the SMT version of these inequalities, we pad the bit-vectors so that multiplication and addition does not get truncated.
+
+ineq5: (x|k)z >= (x&k)z 
+ineq6: (x|y)z >= yz
+ineq7: yz >= (x&y)z
+ineq8: (x|z)(z|y) >= yx
+ineq9: yx >= (x&z)(z&y)
+ineq10: (x|y)(z+1) >= yz + x

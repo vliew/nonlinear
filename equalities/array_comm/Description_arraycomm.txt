@@ -1,0 +1,9 @@
+arraycomm_midbit: Assert (xy)_k != (yx)_k where k is the middle output bit.
+
+arraycomm: standard array commutativity instance asserting that Weight(xy) - Weight(yx) >= 1 or <= -1.
+
+alg_arraycomm: commutativity instance with multiplier given as spec equation instead of circuit.
+
+arraycomm_teq: commutativity with added t-equalities txy_i,j = tyx_j,i.
+
+arraycomm_teq_tvars: commutativity with added t-equalities txy_i,j = tyx_j,i, and removed input variables x_i, y_i.

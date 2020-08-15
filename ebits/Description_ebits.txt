@@ -1,0 +1,5 @@
+ebits_any: Asserts Weight(x) - Weight(y) = 0 and also that some pair x_k != y_k.
+
+ebits_0: Asserts Weight(x) - Weight(y) = 0 and also that x_0 != y_0.
+
+ebits_k: Asserts Weight(x) - Weight(y) = 0 and also that x_{n/2} != y_{n/2}.
