@@ -9,4 +9,5 @@ to produce a 64-bit instance to check equivalence of array and diagonal multipli
 
 The solver Sat4j-CP is currently available at https://www.sat4j.org/
 
-The solver RoundingSat2 is not yet publicly available.
+The solver RoundingSat2 is currently available at
+https://gitlab.com/miao_research/roundingsat
