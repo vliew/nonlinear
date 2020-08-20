@@ -1,0 +1,1 @@
+This folder contains older CNF generators for multiplier properties.
