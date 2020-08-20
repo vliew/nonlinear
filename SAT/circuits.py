@@ -1,7 +1,7 @@
 import os
 # Module defining some useful circuits written in CNF
-# Each write funtion takes some circuit variables as input, and does not create variables.
-# Use the create functions to make some useful variable mappings. 
+# Each "write" funtion takes some circuit variables as input, and does not create variables.
+# Use "create" functions to make some useful variable mappings. 
 
 def createBITVECTOR(inDIMACS,f_key,label,numBits):
     v = {}
