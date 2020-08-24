@@ -1,8 +1,8 @@
 import os
-# Module defining some useful circuits written in CNF
-# PseudoBoolean version.
-# Each write funtion takes some circuit variables as input, and does not create variables.
-# Use the create functions to make some useful variable mappings. 
+# Module providing encodings for some useful circuits. This version provides pseudo-Boolean encodings.
+# 
+# Each write function takes some circuit variables as input, but does *not* create variables.
+# Use the create functions to introduce some useful variable mappings. 
 
 # If writing all columns, just pass in col_constraints.
 # For strip instances, use optional input num_constraints.
