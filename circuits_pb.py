@@ -1,8 +1,11 @@
 import os
-# Module providing encodings for some useful circuits. This version provides pseudo-Boolean encodings.
+# Module providing encodings for some useful circuits. This version
+# provides pseudo-Boolean encodings. 
 # 
-# Each write function takes some circuit variables as input, but does *not* create variables.
-# Use the create functions to introduce some useful variable mappings. 
+# Each write function takes some circuit variables as input, but does
+# *not* create variables. Use the create functions to introduce some
+# useful variable mappings.
+#
 
 # If writing all columns, just pass in col_constraints.
 # For strip instances, use optional input num_constraints.
@@ -111,6 +114,28 @@ def writeSMALLER_NUMBER(col_constraints,col,x,y,numBits):
     clause += ">= 1 ;\n"
     col_constraints[col].append(clause)    
 
+# writeSMALLER_NUMBER_OPT produces an objective function asking to
+# minimize Weight(x) - Weight(y)
+def writeSMALLER_NUMBER_OPT(f_opb, x, y, numBits):
+    f_opb.write("* Objective: minimize <1st product> - <2nd product> \n");
+    f_opb.write("* (finding optimum 0 shows that <1st product> >= <2nd product>) \n");
+    objective = "min: "
+    for i in range(numBits):
+        objective += "+%d x%d -%d x%d " % (2**i, x[i], 2**i, y[i])
+    objective += " ;\n"
+    f_opb.write(objective)
+                
+# writeBIGGER_NUMBER_OPT produces an objective function asking to
+# minimize Weight(y) - Weight(x)
+def writeBIGGER_NUMBER_OPT(f_opb, x, y, numBits):
+    f_opb.write("* Objective: minimize <2nd product> - <1st product> \n");
+    f_opb.write("* (finding optimum 0 shows that <1st product> <= <2nd product>) \n");
+    objective = "min: "
+    for i in range(numBits):
+        objective += "+%d x%d -%d x%d " % (2**i, y[i], 2**i, x[i])
+    objective += " ;\n"
+    f_opb.write(objective)
+                
 # Write c = MAJ(a_0,a_1,a_2) to f_cnf
 def writeMAJ(col_constraints, col, c, a_0, a_1, a_2):
     col_constraints[col].append("+1 x%d -1 x%d -1 x%d >= -1 ;\n" %(c,a_0,a_1))
